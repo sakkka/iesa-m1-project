@@ -8,35 +8,37 @@
 
 import Foundation
 
-class Stand {
+class Stand: NSObject {
     
-    var title:String = ""
-    var description:String = ""
-    var location:String = ""
+    var standTitle:String = ""
+    var standDesc:String = ""
+    var standLocation:String = ""
+    
     
     
     init(title: String){
-        self.title = title
+        self.standTitle = title
     }
     
+    
     func getTitle() ->String{
-        return self.title
+        return self.standTitle
     }
     func setTitle(value : String){
-        self.title = value
+        self.standTitle = value
     }
 
     func getDescription() -> String{
-        return self.description
+        return self.standDesc
     }
     func setDescription(value : String){
-        self.description = value
+        self.standDesc = value
     }
     
     func getLocation() -> String{
-        return self.location
+        return self.standLocation
     }
     func setLocation(value : String){
-        self.location = value
+        self.standLocation = value
     }
 }

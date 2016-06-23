@@ -26,6 +26,7 @@ class MasterViewController: UITableViewController {
         // load data
         //var standStore = def.objectForKey("standsStore")
         //standStore = nil
+        myStandStore = StandStore.retrieveItems()
         
         let age = def.integerForKey("Age")
         
@@ -67,8 +68,10 @@ class MasterViewController: UITableViewController {
             
             // data save
             // self.def.setObject(self.myStandStore, forKey: "standsStore")
-            self.def.setInteger(25, forKey: "Age")
+            // self.def.setInteger(25, forKey: "Age")
             
+            // self.def.setObject(NSKeyedArchiver.archivedDataWithRootObject(self.myStandStore), forKey: "savedStandStore")
+            self.myStandStore.insertItems();
             self.tableView.reloadData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .Default){
@@ -111,7 +114,7 @@ class MasterViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
         //let object = objects[indexPath.row] as! NSDate
-        cell.textLabel!.text = myStandStore.stands[indexPath.row].title
+        cell.textLabel!.text = myStandStore.stands[indexPath.row].standTitle
         return cell
     }
     

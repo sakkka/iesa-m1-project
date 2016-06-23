@@ -19,6 +19,31 @@ class StandStore {
         stands.append(store1)
         
     }
+    
+    init(coder decoder: NSCoder) {
+        self.stands = decoder.decodeObjectForKey("savedStands") as! [Stand]
+
+    }
+    
+    func encodeWithCoder(coder: NSCoder) {
+        coder.encodeObject(self.stands, forKey: "savedStands")
+
+    }
+    
+    func insertItems()
+    {
+        let data = NSKeyedArchiver.archivedDataWithRootObject(stands)
+        NSUserDefaults.standardUserDefaults().setObject(data, forKey: "savedStands")
+    }
+    
+    func retrieveItems() ->[Stand]!
+    {
+        if let data = NSUserDefaults.standardUserDefaults().objectForKey("savedStands") as? NSData {
+            return NSKeyedUnarchiver.unarchiveObjectWithData(data) as! [Stand]
+        }
+        return nil;
+    }
+    
     func insertNewStand(value:String){
         let stand = Stand(title: value)
         stands.append(stand)
