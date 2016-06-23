@@ -27,6 +27,11 @@ class MasterViewController: UITableViewController {
         //var standStore = def.objectForKey("standsStore")
         //standStore = nil
         
+        let age = def.integerForKey("Age")
+        
+        print(age)
+        
+        
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
         self.navigationItem.rightBarButtonItem = addButton
         if let split = self.splitViewController {
@@ -61,7 +66,8 @@ class MasterViewController: UITableViewController {
             self.myStandStore.insertNewStand(textField.text!)
             
             // data save
-            //self.def.setObject(StandStore.self, forKey: "standsStore")
+            // self.def.setObject(self.myStandStore, forKey: "standsStore")
+            self.def.setInteger(25, forKey: "Age")
             
             self.tableView.reloadData()
         }
