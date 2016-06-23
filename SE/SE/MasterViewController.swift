@@ -46,7 +46,7 @@ class MasterViewController: UITableViewController {
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         */
         
-        let alert = UIAlertController(title: "Add a new Store", message: "store name :", preferredStyle: .Alert)
+        let alert = UIAlertController(title: "Add a new Stand", message: "Stand name :", preferredStyle: .Alert)
         let saveAction = UIAlertAction(title: "Save", style: .Default){
             (action: UIAlertAction) -> Void in
             let textField = alert.textFields![0]
@@ -96,6 +96,21 @@ class MasterViewController: UITableViewController {
         cell.textLabel!.text = myStandStore.stands[indexPath.row].title
         return cell
     }
+    
+    /*
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("You selected cell #\(indexPath.row)!")
+        
+        var standTitle:String!
+        // Get Cell Label
+        let indexPath = tableView.indexPathForSelectedRow!
+        let currentCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
+        
+        standTitle = currentCell.textLabel!.text
+        performSegueWithIdentifier("showDetail", sender: self)
+        
+    }
+    */
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.

@@ -10,8 +10,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var locationLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
 
 
@@ -26,7 +26,8 @@ class DetailViewController: UIViewController {
         // Update the user interface for the detail item.
         if let detail: AnyObject = self.detailItem{
             let stand = detail as! Stand
-            titleLabel.text = stand.getTitle()
+            //stand.setTitle("okoko")
+            titleLabel.text = "okokok"
             locationLabel.text = stand.getLocation()
             descriptionLabel.text = stand.getDescription()
         }
