@@ -36,10 +36,10 @@ class StandStore {
         NSUserDefaults.standardUserDefaults().setObject(data, forKey: "savedStands")
     }
     
-    func retrieveItems() ->[Stand]!
+    func retrieveItems() ->StandStore!
     {
         if let data = NSUserDefaults.standardUserDefaults().objectForKey("savedStands") as? NSData {
-            return NSKeyedUnarchiver.unarchiveObjectWithData(data) as! [Stand]
+            return NSKeyedUnarchiver.unarchiveObjectWithData(data) as! StandStore
         }
         return nil;
     }

@@ -26,7 +26,7 @@ class MasterViewController: UITableViewController {
         // load data
         //var standStore = def.objectForKey("standsStore")
         //standStore = nil
-        myStandStore = StandStore.retrieveItems()
+        myStandStore = myStandStore.retrieveItems()
         
         let age = def.integerForKey("Age")
         
