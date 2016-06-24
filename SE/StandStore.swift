@@ -23,4 +23,13 @@ class StandStore {
         let stand = Stand(title: value)
         stands.append(stand)
     }
+    
+    func removeStand(index:Int){
+        self.stands.removeAtIndex(index)
+        
+    }
+    
+    func save() {
+        
+    }
 }
