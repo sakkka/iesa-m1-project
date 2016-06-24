@@ -27,9 +27,9 @@ class DetailViewController: UIViewController {
         if let detail: AnyObject = self.detailItem{
             let stand = detail as! Stand
             //stand.setTitle("okoko")
-            titleLabel.text = stand.getTitle()
-            locationLabel.text = stand.getLocation()
-            descriptionLabel.text = stand.getDescription()
+            titleLabel.text = stand.title
+            locationLabel.text = stand.location
+            descriptionLabel.text = stand.standDescription
         }
     }
 

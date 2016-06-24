@@ -12,7 +12,7 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = [AnyObject]()
-    var myStandStore:StandStore = StandStore()
+    var myStandStore:StandStore = StandStore(coder: NSCoder())
     var newStand:Stand?
     
     let def = NSUserDefaults.standardUserDefaults()
@@ -24,11 +24,9 @@ class MasterViewController: UITableViewController {
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
         
         // load data
-    
-        
-        print(age)
-        
-        
+        self.myStandStore.load();
+
+
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
         self.navigationItem.rightBarButtonItem = addButton
         if let split = self.splitViewController {
@@ -56,6 +54,7 @@ class MasterViewController: UITableViewController {
             
             // add new stand
             self.myStandStore.insertNewStand(textField.text!)
+            self.myStandStore.save();
             
             
             self.tableView.reloadData()
@@ -118,6 +117,7 @@ class MasterViewController: UITableViewController {
             
             // remove stand
             myStandStore.removeStand(indexPath.row)
+            self.myStandStore.save();
             
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {

@@ -10,15 +10,16 @@ import Foundation
 
 class StandStore {
     
-    var stands:[Stand] = []
+    var stands = [Stand]()
     
-    init(){
-        let store1 = Stand(title:"IESA Paris")
-        store1.setDescription("Ecole supperieure multimedia et art de Paris")
-        store1.setLocation("B2")
-        stands.append(store1)
-        
+    required init(coder decoder: NSCoder) {
     }
+    
+    func encodeWithCoder(aCoder: NSCoder){
+        aCoder.encodeObject(stands, forKey: "standList")
+    }
+    
+    
     func insertNewStand(value:String){
         let stand = Stand(title: value)
         stands.append(stand)
@@ -30,6 +31,14 @@ class StandStore {
     }
     
     func save() {
-        
+        let stockerStand = NSKeyedArchiver.archivedDataWithRootObject(self.stands)
+        NSUserDefaults.standardUserDefaults().setObject(stockerStand, forKey: "standList")
+    }
+    
+    func load() {
+        if let stockerStand = NSUserDefaults.standardUserDefaults().objectForKey("standList") as? NSData {
+            let savedStandList = NSKeyedUnarchiver.unarchiveObjectWithData(stockerStand) as! [Stand]
+            self.stands = savedStandList
+        }
     }
 }
