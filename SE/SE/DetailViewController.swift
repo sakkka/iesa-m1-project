@@ -18,7 +18,7 @@ class DetailViewController: UIViewController {
     var detailItem: AnyObject? {
         didSet {
             // Update the view.
-            self.configureView()
+            //self.configureView()
         }
     }
 
@@ -27,7 +27,7 @@ class DetailViewController: UIViewController {
         if let detail: AnyObject = self.detailItem{
             let stand = detail as! Stand
             //stand.setTitle("okoko")
-            titleLabel.text = "okokok"
+            titleLabel.text = stand.getTitle()
             locationLabel.text = stand.getLocation()
             descriptionLabel.text = stand.getDescription()
         }

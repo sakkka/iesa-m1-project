@@ -14,13 +14,24 @@ class MasterViewController: UITableViewController {
     var objects = [AnyObject]()
     var myStandStore:StandStore = StandStore()
     var newStand:Stand?
+    
+    let def = NSUserDefaults.standardUserDefaults()
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
-
+        
+        // load data
+        //var standStore = def.objectForKey("standsStore")
+        //standStore = nil
+        
+        let age = def.integerForKey("Age")
+        
+        print(age)
+        
+        
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
         self.navigationItem.rightBarButtonItem = addButton
         if let split = self.splitViewController {
@@ -46,11 +57,18 @@ class MasterViewController: UITableViewController {
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         */
         
+       
+        
         let alert = UIAlertController(title: "Add a new Stand", message: "Stand name :", preferredStyle: .Alert)
         let saveAction = UIAlertAction(title: "Save", style: .Default){
             (action: UIAlertAction) -> Void in
             let textField = alert.textFields![0]
             self.myStandStore.insertNewStand(textField.text!)
+            
+            // data save
+            // self.def.setObject(self.myStandStore, forKey: "standsStore")
+            self.def.setInteger(25, forKey: "Age")
+            
             self.tableView.reloadData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .Default){
