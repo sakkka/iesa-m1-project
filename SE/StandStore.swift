@@ -8,7 +8,7 @@
 
 import Foundation
 
-class StandStore {
+class StandStore: NSCoder {
     
     var stands:[Stand] = []
     
@@ -20,7 +20,7 @@ class StandStore {
         
     }
     
-    init(coder decoder: NSCoder) {
+    init(decoder: NSCoder) {
         self.stands = decoder.decodeObjectForKey("savedStands") as! [Stand]
 
     }
@@ -28,20 +28,6 @@ class StandStore {
     func encodeWithCoder(coder: NSCoder) {
         coder.encodeObject(self.stands, forKey: "savedStands")
 
-    }
-    
-    func insertItems()
-    {
-        let data = NSKeyedArchiver.archivedDataWithRootObject(stands)
-        NSUserDefaults.standardUserDefaults().setObject(data, forKey: "savedStands")
-    }
-    
-    func retrieveItems() ->StandStore!
-    {
-        if let data = NSUserDefaults.standardUserDefaults().objectForKey("savedStands") as? NSData {
-            return NSKeyedUnarchiver.unarchiveObjectWithData(data) as! StandStore
-        }
-        return nil;
     }
     
     func insertNewStand(value:String){

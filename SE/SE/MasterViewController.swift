@@ -26,7 +26,18 @@ class MasterViewController: UITableViewController {
         // load data
         //var standStore = def.objectForKey("standsStore")
         //standStore = nil
-        myStandStore = myStandStore.retrieveItems()
+        func retrieveItems()
+        {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            
+            if let data = NSUserDefaults.standardUserDefaults().objectForKey("savedStands") as? NSData {
+                let _mySavedList = NSKeyedUnarchiver.unarchiveObjectWithData(data)
+            }
+        }
+        
+
+        let loadedData = retrieveItems()
+        
         
         let age = def.integerForKey("Age")
         
@@ -58,7 +69,9 @@ class MasterViewController: UITableViewController {
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         */
         
-       
+
+        
+
         
         let alert = UIAlertController(title: "Add a new Stand", message: "Stand name :", preferredStyle: .Alert)
         let saveAction = UIAlertAction(title: "Save", style: .Default){
@@ -71,7 +84,16 @@ class MasterViewController: UITableViewController {
             // self.def.setInteger(25, forKey: "Age")
             
             // self.def.setObject(NSKeyedArchiver.archivedDataWithRootObject(self.myStandStore), forKey: "savedStandStore")
-            self.myStandStore.insertItems();
+            
+            func insertItems()
+            {
+                self.myStandStore.encodeWithCoder(NSCoder);
+                let data = NSKeyedArchiver.archivedDataWithRootObject(self.myStandStore)
+                NSUserDefaults.standardUserDefaults().setObject(data, forKey: "savedStands")
+            }
+            insertItems()
+            
+            
             self.tableView.reloadData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .Default){
