@@ -12,7 +12,7 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = [AnyObject]()
-    var myStandStore:StandStore = StandStore()
+    var myStandStore:StandStore = StandStore(coder: NSCoder())
     var newStand:Stand?
     
     let def = NSUserDefaults.standardUserDefaults()
@@ -24,14 +24,9 @@ class MasterViewController: UITableViewController {
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
         
         // load data
-        //var standStore = def.objectForKey("standsStore")
-        //standStore = nil
-        
-        let age = def.integerForKey("Age")
-        
-        print(age)
-        
-        
+        self.myStandStore.load();
+
+
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
         self.navigationItem.rightBarButtonItem = addButton
         if let split = self.splitViewController {
@@ -51,32 +46,28 @@ class MasterViewController: UITableViewController {
     }
 
     func insertNewObject(sender: AnyObject) {
-        /*
-        objects.insert(NSDate(), atIndex: 0)
-        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-        */
-        
-       
-        
+
         let alert = UIAlertController(title: "Add a new Stand", message: "Stand name :", preferredStyle: .Alert)
         let saveAction = UIAlertAction(title: "Save", style: .Default){
             (action: UIAlertAction) -> Void in
             let textField = alert.textFields![0]
-            self.myStandStore.insertNewStand(textField.text!)
             
-            // data save
-            // self.def.setObject(self.myStandStore, forKey: "standsStore")
-            self.def.setInteger(25, forKey: "Age")
+            // add new stand
+            self.myStandStore.insertNewStand(textField.text!)
+            self.myStandStore.save();
+            
             
             self.tableView.reloadData()
         }
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: .Default){
             (action: UIAlertAction) -> Void in
         }
+        
         alert.addTextFieldWithConfigurationHandler{
             (textField: UITextField) -> Void in
         }
+        
         alert.addAction(saveAction)
         alert.addAction(cancelAction)
         presentViewController(alert, animated: true, completion:nil)
@@ -115,20 +106,6 @@ class MasterViewController: UITableViewController {
         return cell
     }
     
-    /*
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("You selected cell #\(indexPath.row)!")
-        
-        var standTitle:String!
-        // Get Cell Label
-        let indexPath = tableView.indexPathForSelectedRow!
-        let currentCell = tableView.cellForRowAtIndexPath(indexPath)! as UITableViewCell
-        
-        standTitle = currentCell.textLabel!.text
-        performSegueWithIdentifier("showDetail", sender: self)
-        
-    }
-    */
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
@@ -137,7 +114,11 @@ class MasterViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            myStandStore.stands.removeAtIndex(indexPath.row)
+            
+            // remove stand
+            myStandStore.removeStand(indexPath.row)
+            self.myStandStore.save();
+            
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.

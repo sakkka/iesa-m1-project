@@ -8,10 +8,10 @@
 
 import Foundation
 
-class Stand {
+class Stand: NSObject {
     
     var title:String = ""
-    var description:String = ""
+    var standDescription:String = ""
     var location:String = ""
     
     
@@ -19,24 +19,16 @@ class Stand {
         self.title = title
     }
     
-    func getTitle() ->String{
-        return self.title
-    }
-    func setTitle(value : String){
-        self.title = value
-    }
-
-    func getDescription() -> String{
-        return self.description
-    }
-    func setDescription(value : String){
-        self.description = value
+    init(coder decoder: NSCoder) {
+        self.title = decoder.decodeObjectForKey("title") as! String
+        self.standDescription = decoder.decodeObjectForKey("standDescription") as! String
+        self.location = decoder.decodeObjectForKey("location") as! String
     }
     
-    func getLocation() -> String{
-        return self.location
+    func encodeWithCoder(coder: NSCoder) {
+        coder.encodeObject(self.title, forKey: "title")
+        coder.encodeObject(self.standDescription, forKey: "standDescription")
+        coder.encodeObject(self.location, forKey: "location")
     }
-    func setLocation(value : String){
-        self.location = value
-    }
+    
 }

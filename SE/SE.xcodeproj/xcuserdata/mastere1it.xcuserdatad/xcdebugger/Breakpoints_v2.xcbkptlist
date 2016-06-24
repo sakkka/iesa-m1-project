@@ -9,62 +9,76 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SE/MasterViewController.swift"
-            timestampString = "488382087.109468"
+            filePath = "Stand.swift"
+            timestampString = "488465289.439796"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "MasterViewController"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "Stand"
             landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SE/MasterViewController.swift"
-            timestampString = "488378973.253171"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SE/MasterViewController.swift"
-            timestampString = "488382087.109468"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SE/MasterViewController.swift"
-            timestampString = "488388229.49245"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SE.Stand.standDescription.setter : Swift.String"
+                  moduleName = "SE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mastere1it/Documents/iesa-m1-project/SE/Stand.swift"
+                  timestampString = "488465714.441198"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SE.Stand.init (SE.Stand.Type)(title : Swift.String) -&gt; SE.Stand"
+                  moduleName = "SE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mastere1it/Documents/iesa-m1-project/SE/Stand.swift"
+                  timestampString = "488465714.441431"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "117">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SE.Stand.init (SE.Stand.Type)(coder : __ObjC.NSCoder) -&gt; SE.Stand"
+                  moduleName = "SE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mastere1it/Documents/iesa-m1-project/SE/Stand.swift"
+                  timestampString = "488465714.441665"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "109">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SE.Stand.standDescription.materializeForSet : Swift.String"
+                  moduleName = "SE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mastere1it/Documents/iesa-m1-project/SE/Stand.swift"
+                  timestampString = "488465714.441916"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
