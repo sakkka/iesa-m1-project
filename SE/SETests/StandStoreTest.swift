@@ -5,7 +5,7 @@
 //  Created by Mastere 1 IT on 24/06/2016.
 //  Copyright © 2016 Mastere 1 IT. All rights reserved.
 //
-/*
+
 import XCTest
 
 class StandStoreTest: XCTestCase {
@@ -20,21 +20,23 @@ class StandStoreTest: XCTestCase {
         super.tearDown()
     }
 
-    func insert_test() {
-        
-        var store = StandStore()
+    func test_insert_store() {
+        let store = StandStore()
         
         store.insertNewStand("storeTest1")
         
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssertEqual(1, store.stands.count)
+        
     }
     
-    func remove_test () {
-        var store = StandStore()
+    func test_remove_store () {
+        let store = StandStore()
         
-        store.removeStrand(1)
+        store.insertNewStand("storeTest1")
+        store.removeStand(0)
+        
+        XCTAssertEqual(0, store.stands.count)
     }
+    
 
 }
-*/

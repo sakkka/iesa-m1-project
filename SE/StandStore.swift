@@ -12,6 +12,10 @@ class StandStore {
     
     var stands = [Stand]()
     
+    init (){
+        
+    }
+    
     required init(coder decoder: NSCoder) {
     }
     
@@ -25,8 +29,8 @@ class StandStore {
         stands.append(stand)
     }
     
-    func removeStand(index:Int){
-        self.stands.removeAtIndex(index)
+    func removeStand(index:Int) -> Stand{
+        return self.stands.removeAtIndex(index)
         
     }
     
