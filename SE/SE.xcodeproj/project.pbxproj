@@ -18,7 +18,8 @@
 		1C0003951D1BEE1600335DF0 /* Stand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0003941D1BEE1600335DF0 /* Stand.swift */; };
 		1C0003971D1BFA8C00335DF0 /* StandStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0003961D1BFA8C00335DF0 /* StandStore.swift */; };
 		1C27E4441D1D668F008A1AF0 /* StandStoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C27E4431D1D668F008A1AF0 /* StandStoreTest.swift */; };
-		1C27E4461D1D6907008A1AF0 /* StandStoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C27E4431D1D668F008A1AF0 /* StandStoreTest.swift */; };
+		1C27E4491D1D76F9008A1AF0 /* StandStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0003961D1BFA8C00335DF0 /* StandStore.swift */; };
+		1C27E44A1D1D777A008A1AF0 /* Stand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0003941D1BEE1600335DF0 /* Stand.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -271,7 +272,6 @@
 			files = (
 				1C0003951D1BEE1600335DF0 /* Stand.swift in Sources */,
 				1C0003691D1BE62100335DF0 /* DetailViewController.swift in Sources */,
-				1C27E4461D1D6907008A1AF0 /* StandStoreTest.swift in Sources */,
 				1C0003671D1BE62100335DF0 /* MasterViewController.swift in Sources */,
 				1C0003971D1BFA8C00335DF0 /* StandStore.swift in Sources */,
 				1C0003651D1BE62100335DF0 /* AppDelegate.swift in Sources */,
@@ -282,8 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C27E44A1D1D777A008A1AF0 /* Stand.swift in Sources */,
 				1C27E4441D1D668F008A1AF0 /* StandStoreTest.swift in Sources */,
 				1C00037C1D1BE62100335DF0 /* SETests.swift in Sources */,
+				1C27E4491D1D76F9008A1AF0 /* StandStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
