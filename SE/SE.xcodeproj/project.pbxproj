@@ -20,6 +20,9 @@
 		1C27E4441D1D668F008A1AF0 /* StandStoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C27E4431D1D668F008A1AF0 /* StandStoreTest.swift */; };
 		1C27E4491D1D76F9008A1AF0 /* StandStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0003961D1BFA8C00335DF0 /* StandStore.swift */; };
 		1C27E44A1D1D777A008A1AF0 /* Stand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0003941D1BEE1600335DF0 /* Stand.swift */; };
+		1C2BC4EB1D218D8600FE6F55 /* Capture d’écran 2016-06-27 à 18.35.10.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C2BC4EA1D218D8600FE6F55 /* Capture d’écran 2016-06-27 à 18.35.10.png */; };
+		1C2BC4EF1D218DB600FE6F55 /* Photosphère-Soleil-Ultraviolets-Télescope-TRACE_picmonkeyed.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C2BC4EE1D218DB600FE6F55 /* Photosphère-Soleil-Ultraviolets-Télescope-TRACE_picmonkeyed.jpg */; };
+		1C2BC4F11D218E6900FE6F55 /* Capture d’écran 2016-06-27 à 18.39.58.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C2BC4F01D218E6900FE6F55 /* Capture d’écran 2016-06-27 à 18.39.58.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		1C0003941D1BEE1600335DF0 /* Stand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stand.swift; sourceTree = "<group>"; };
 		1C0003961D1BFA8C00335DF0 /* StandStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandStore.swift; sourceTree = "<group>"; };
 		1C27E4431D1D668F008A1AF0 /* StandStoreTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandStoreTest.swift; sourceTree = "<group>"; };
+		1C2BC4EA1D218D8600FE6F55 /* Capture d’écran 2016-06-27 à 18.35.10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Capture d’écran 2016-06-27 à 18.35.10.png"; sourceTree = "<group>"; };
+		1C2BC4EE1D218DB600FE6F55 /* Photosphère-Soleil-Ultraviolets-Télescope-TRACE_picmonkeyed.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Photosphère-Soleil-Ultraviolets-Télescope-TRACE_picmonkeyed.jpg"; sourceTree = "<group>"; };
+		1C2BC4F01D218E6900FE6F55 /* Capture d’écran 2016-06-27 à 18.39.58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Capture d’écran 2016-06-27 à 18.39.58.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,7 @@
 		1C0003631D1BE62100335DF0 /* SE */ = {
 			isa = PBXGroup;
 			children = (
+				1C2BC4E51D218B7100FE6F55 /* image */,
 				1C0003641D1BE62100335DF0 /* AppDelegate.swift */,
 				1C0003661D1BE62100335DF0 /* MasterViewController.swift */,
 				1C0003681D1BE62100335DF0 /* DetailViewController.swift */,
@@ -137,6 +144,16 @@
 				1C0003881D1BE62100335DF0 /* Info.plist */,
 			);
 			path = SEUITests;
+			sourceTree = "<group>";
+		};
+		1C2BC4E51D218B7100FE6F55 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				1C2BC4F01D218E6900FE6F55 /* Capture d’écran 2016-06-27 à 18.39.58.png */,
+				1C2BC4EE1D218DB600FE6F55 /* Photosphère-Soleil-Ultraviolets-Télescope-TRACE_picmonkeyed.jpg */,
+				1C2BC4EA1D218D8600FE6F55 /* Capture d’écran 2016-06-27 à 18.35.10.png */,
+			);
+			name = image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,8 +260,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C2BC4EF1D218DB600FE6F55 /* Photosphère-Soleil-Ultraviolets-Télescope-TRACE_picmonkeyed.jpg in Resources */,
 				1C0003711D1BE62100335DF0 /* LaunchScreen.storyboard in Resources */,
 				1C00036E1D1BE62100335DF0 /* Assets.xcassets in Resources */,
+				1C2BC4EB1D218D8600FE6F55 /* Capture d’écran 2016-06-27 à 18.35.10.png in Resources */,
+				1C2BC4F11D218E6900FE6F55 /* Capture d’écran 2016-06-27 à 18.39.58.png in Resources */,
 				1C00036C1D1BE62100335DF0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
